@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:model_viewer_plus/model_viewer_plus.dart';
+
 // import 'package:model_viewer_plus/model_viewer_plus.dart';
 import '/models/planets_model.dart';
-
 import '../../core/theme/app_colors.dart';
 
 class PlanetsDetailsPage extends StatelessWidget {
@@ -36,9 +37,15 @@ class PlanetsDetailsPage extends StatelessWidget {
                   color: AppColors.white
                 ),),
                 SizedBox(height: 10),
-                Image.asset(
-                    planet.image,
-                    height:size.height * 0.4
+                SizedBox(
+                  height: size.height * 0.5,
+                  child: ModelViewer(
+                    src: planet.model,
+                    alt: 'A 3D model of an astronaut',
+                    ar: true,
+                    autoRotate: true,
+                    disableZoom: true,
+                  ),
                 ),
                 SizedBox(height: 10),
                 Text("About",

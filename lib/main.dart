@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+
 import '/core/theme/app_colors.dart';
 import '/screens/home/home_page.dart';
-
 import 'models/planets_model.dart';
 import 'screens/planet_details_page/planet_details_page.dart';
 import 'screens/splash/splash_page.dart';
@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
           style: ElevatedButton.styleFrom(
             backgroundColor: AppColors.primaryColor,
             iconColor: AppColors.white,
-            padding: EdgeInsets.all(16),
+            padding: const EdgeInsets.all(16),
           )
         ),
         appBarTheme: AppBarTheme(
@@ -35,10 +35,10 @@ class MyApp extends StatelessWidget {
       initialRoute: SplashPage.routeName,
       routes: {
         SplashPage.routeName: (BuildContext _) {
-          return SplashPage();
+          return const SplashPage();
         },
         HomePage.routeName: (BuildContext _) {
-          return HomePage();
+          return const HomePage();
         },
         PlanetsDetailsPage.routeName: (BuildContext context) {
           var planet = ModalRoute.of(context)!.settings.arguments as PlanetsModel;
